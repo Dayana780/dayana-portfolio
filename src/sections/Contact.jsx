@@ -21,7 +21,7 @@ const contactLinks = [
   },
   {
     label: "LinkedIn",
-    value: "https://www.linkedin.com/in/dayana-ehsanian-18229b2aa/",
+    value: "linkedin.com/in/dayana-ehsanian",
     href: "https://www.linkedin.com/in/dayana-ehsanian-18229b2aa/",
     icon: Link2,
   },
