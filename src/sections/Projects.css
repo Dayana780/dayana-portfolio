@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  align-items: stretch;
 }
 
 /* Wraps the featured ProjectCard so it spans the full grid width.
@@ -11,22 +12,12 @@
   grid-column: 1 / -1;
 }
 
+.projects__grid > * {
+  height: 100%;
+}
+
 @media (max-width: 720px) {
   .projects__grid {
     grid-template-columns: 1fr;
   }
-}
-.projects__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  align-items: stretch;
-}
-
-.projects__grid-item--featured {
-  grid-column: 1 / -1;
-}
-
-.projects__grid > * {
-  height: 100%;
 }
