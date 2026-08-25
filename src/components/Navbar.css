@@ -1,0 +1,122 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 1px solid transparent;
+  transition: background 280ms var(--ease), border-color 280ms var(--ease),
+    backdrop-filter 280ms var(--ease);
+}
+
+.navbar--scrolled {
+  background: rgba(10, 10, 11, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.navbar__logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16.5px;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+.navbar__logo-dot {
+  color: var(--accent);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar__links a {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 200ms var(--ease);
+  position: relative;
+}
+
+.navbar__links a:hover {
+  color: var(--text-primary);
+}
+
+.navbar__cta {
+  display: block;
+}
+
+.navbar__toggle {
+  display: none;
+  color: var(--text-primary);
+  padding: 6px;
+}
+
+.navbar__mobile {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .navbar__links,
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar__mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px 24px 32px;
+    background: rgba(10, 10, 11, 0.98);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    animation: navbar-slide-down 260ms var(--ease);
+  }
+
+  .navbar__mobile nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar__mobile nav a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .navbar__mobile nav a:hover {
+    color: var(--text-primary);
+  }
+
+  .navbar__mobile .btn {
+    width: 100%;
+  }
+}
+
+@keyframes navbar-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

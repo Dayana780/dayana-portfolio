@@ -1,0 +1,75 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about__intro .section-title {
+  margin-bottom: 32px;
+}
+
+.about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.about__body p {
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  max-width: 560px;
+}
+
+/* Visual "currently focused on" card that balances the text column */
+.about__card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  position: sticky;
+  top: calc(var(--navbar-height) + 24px);
+}
+
+.about__card-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-hover);
+  margin-bottom: 24px;
+}
+
+.about__card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about__card-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.about__card-list svg {
+  flex-shrink: 0;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about__card {
+    position: static;
+  }
+}

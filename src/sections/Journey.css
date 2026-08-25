@@ -1,0 +1,106 @@
+.journey__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey__steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  list-style: none;
+}
+
+/* Connecting line running through the steps. Vertical by default (mobile),
+   switches to horizontal once the steps sit in a row. */
+.journey__steps::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.journey__step {
+  position: relative;
+  z-index: 1;
+}
+
+.journey__step-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 32px;
+  min-width: 280px;
+  transition: border-color 240ms var(--ease), transform 240ms var(--ease);
+}
+
+.journey__step-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.journey__step-number {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.journey__step-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16.5px;
+}
+
+@media (min-width: 860px) {
+  .journey__steps {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .journey__steps::before {
+    top: 50%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 1px;
+  }
+
+  .journey__step {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .journey__step-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    min-width: 0;
+    width: 100%;
+    max-width: 220px;
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey__step-card {
+    min-width: 240px;
+    padding: 16px 24px;
+  }
+}

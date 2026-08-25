@@ -1,0 +1,35 @@
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.section-title h2 {
+  font-size: clamp(30px, 4vw, 42px);
+}
+
+.section-title__subtitle {
+  max-width: 560px;
+  color: var(--text-secondary);
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+
+.section-title--center {
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title--center .section-title__subtitle {
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    margin-bottom: 44px;
+    gap: 12px;
+  }
+}
